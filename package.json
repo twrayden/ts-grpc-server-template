@@ -4,7 +4,7 @@
   "scripts": {
     "dev": "ts-node src",
     "start": "node dist",
-    "build": "tsc -p",
+    "build": "tsc -b",
     "build-protos": "ts-node bin/build-protos",
     "prettier": "prettier --write ."
   },
