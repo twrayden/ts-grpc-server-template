@@ -2,7 +2,7 @@
 
 My personal starting point for TypeScript gRPC projects.
 
-## Features
+## Highlights
 
 - Simple, flexible, and tidy with sensible defaults
 - 100% TypeScript
