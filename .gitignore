@@ -1,0 +1,15 @@
+# npm files
+node_modules
+.npm
+package-lock.json
+npm-debug.log*
+
+# mac files
+.DS_Store
+
+# compiler output
+dist
+
+# env files
+.env.*
+*.env

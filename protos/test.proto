@@ -1,0 +1,22 @@
+
+// https://developers.google.com/protocol-buffers/docs/proto3?hl=ko#json
+// https://developers.google.com/protocol-buffers/docs/reference/proto3-spec
+syntax = "proto3";
+
+// https://developers.google.com/protocol-buffers/docs/proto3#packages-and-name-resolution
+package test;
+
+// https://developers.google.com/protocol-buffers/docs/reference/google.protobuf
+import "google/protobuf/struct.proto";
+
+service Test {
+  rpc HelloWorld (HelloWorldRequest) returns (HelloWorldResponse);
+}
+
+message HelloWorldRequest {
+  string name = 1;
+}
+
+message HelloWorldResponse {
+  string message = 1;
+}
