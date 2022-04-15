@@ -1,7 +1,5 @@
 {
   "name": "typescript-grpc-starter",
-  "description": "My personal starting point for TypeScript gRPC projects",
-  "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "ts-node src",
