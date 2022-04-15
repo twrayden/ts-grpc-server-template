@@ -7,12 +7,11 @@ import {
 import { ServiceError } from "../errors/service-error";
 import {
   TestServer,
-  TestService,
   HelloWorldRequest,
   HelloWorldResponse,
 } from "../models/test";
 
-class Test implements TestServer {
+export class Test implements TestServer {
   [method: string]: UntypedHandleCall;
 
   helloWorld(
@@ -33,5 +32,3 @@ class Test implements TestServer {
     callback(null, HelloWorldResponse.fromJSON(res));
   }
 }
-
-export { Test, TestService };

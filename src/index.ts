@@ -1,6 +1,7 @@
 import "source-map-support/register";
 import { Server, ServerCredentials } from "@grpc/grpc-js";
-import { TestService, Test } from "./services/test-service";
+import { Test } from "./services/test-service";
+import { TestService } from "./models/test";
 import { logger } from "./utils/logger";
 import { env } from "./utils/env";
 
