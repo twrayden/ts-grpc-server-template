@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "strictNullChecks": true,
+    "esModuleInterop": true
+  },
+  "include": ["bin/*.ts"],
+  "exclude": ["node_modules"]
+}

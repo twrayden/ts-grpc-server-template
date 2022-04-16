@@ -1,9 +1,9 @@
 import "source-map-support/register";
 import { Server, ServerCredentials } from "@grpc/grpc-js";
-import { Test } from "./services/test-service";
-import { TestService } from "./models/test";
 import { logger } from "./utils/logger";
 import { env } from "./utils/env";
+import { testDefinition } from "@typescript-grpc-starter/protos/lib/test.grpc-server";
+import { TestService } from "./services/test-service";
 
 const server = new Server({
   "grpc.max_receive_message_length": -1,
@@ -16,7 +16,7 @@ const creds = ServerCredentials.createInsecure();
 
 export const run = async () => {
   // Do not use @grpc/proto-loader
-  server.addService(TestService, new Test());
+  server.addService(testDefinition, new TestService());
 
   server.bindAsync(addr, creds, (err, bindPort) => {
     if (err) {
