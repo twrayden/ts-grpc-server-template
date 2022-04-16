@@ -1,5 +1,5 @@
 {
-  "name": "@typescript-grpc-starter/service",
+  "name": "@typescript-grpc-starter/server",
   "private": true,
   "version": "0.1.0",
   "scripts": {
