@@ -6,7 +6,7 @@ syntax = "proto3";
 // https://developers.google.com/protocol-buffers/docs/proto3#packages-and-name-resolution
 package test;
 
-service Test {
+service TestService {
   rpc HelloWorld (HelloWorldRequest) returns (HelloWorldResponse);
 }
 

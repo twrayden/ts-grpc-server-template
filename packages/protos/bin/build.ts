@@ -14,6 +14,7 @@ const args = [
   `--proto_path=${toRelative(PROTOS_DIR)}`,
   `--ts_opt=output_javascript`,
   `--ts_opt=server_grpc1`,
+  `--ts_opt=client_grpc1`
 ];
 
 export const run = async () => {

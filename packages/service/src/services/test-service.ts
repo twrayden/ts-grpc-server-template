@@ -1,23 +1,31 @@
-import { status, UntypedHandleCall } from "@grpc/grpc-js";
-import { ServiceError } from "../errors/service-error";
-import { ITest } from "@typescript-grpc-starter/protos/lib/test.grpc-server";
-import { HelloWorldResponse } from "@typescript-grpc-starter/protos/lib/test";
+import * as grpc from "@grpc/grpc-js";
+import {
+  HelloWorldRequest,
+  HelloWorldResponse,
+} from "@typescript-grpc-starter/protos/lib/test";
+import { ITestService } from "@typescript-grpc-starter/protos/lib/test.grpc-server";
 
-export class TestService implements ITest {
-  [name: string]: UntypedHandleCall;
+export class TestService implements ITestService {
+  [name: string]: grpc.UntypedHandleCall;
 
-  helloWorld(call, callback) {
+  helloWorld(
+    call: grpc.ServerUnaryCall<HelloWorldRequest, HelloWorldResponse>,
+    callback: grpc.sendUnaryData<HelloWorldResponse>
+  ) {
     const { name } = call.request;
 
-    if (name === "error") {
-      callback(new ServiceError(status.INVALID_ARGUMENT, "InvalidValue"), null);
+    if (name.length > 10) {
+      callback({
+        code: grpc.status.INVALID_ARGUMENT,
+        message: "Name cannot be larger than 10 characters",
+      });
       return;
     }
 
-    const res: HelloWorldResponse = {
+    const res = HelloWorldResponse.create({
       message: `hello ${name}`,
-    };
+    });
 
-    callback(null, HelloWorldResponse.create(res));
+    callback(null, res);
   }
 }

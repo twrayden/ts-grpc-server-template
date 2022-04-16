@@ -5,6 +5,5 @@ My personal starting point for TypeScript gRPC projects.
 ## Highlights
 
 - Simple, flexible, and tidy with sensible defaults
-- 100% TypeScript
-- Helpful comments
-- Generates TypeScript Protobuf types for server & client using [ts-proto-gen](https://github.com/stephenh/ts-proto)
+- Pure TypeScript
+- Separate publishable package with protobuf TypeScript types & definitions for server & client (using [protobuf-ts](https://github.com/timostamm/protobuf-ts))
