@@ -1,6 +1,9 @@
 {
   "name": "root",
   "private": true,
+  "scripts": {
+    "build-protos": "lerna run --scope @typescript-grpc-starter/protos build && lerna bootstrap"
+  },
   "devDependencies": {
     "lerna": "3.22.1"
   }
