@@ -13,3 +13,7 @@ My personal starting point for TypeScript gRPC projects.
 #### Why have a separate package for protobuf files?
 
 This is so that you can publish your protobuf types & definitions to a package registry, this allows your gRPC clients to install and use the exact same types as the server.
+
+## Getting Started
+
+...
