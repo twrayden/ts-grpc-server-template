@@ -16,4 +16,7 @@ This is so that you can publish your protobuf types & definitions to a package r
 
 ## Getting Started
 
-...
+> TODO:
+> - Quick breakdown on how everything is setup (important things to know)
+> - Where & what code to change if using template
+> - ...
