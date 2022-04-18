@@ -14,7 +14,7 @@ const args = [
   `--proto_path=${toRelative(PROTOS_DIR)}`,
   `--ts_opt=output_javascript`,
   `--ts_opt=server_grpc1`,
-  `--ts_opt=client_grpc1`
+  `--ts_opt=client_grpc1`,
 ];
 
 export const run = async () => {
@@ -27,10 +27,7 @@ export const run = async () => {
   await execa("npx", [
     "protoc",
     ...args,
-    filenames
-      .map((n) => path.join(PROTOS_DIR, n))
-      .map(toRelative)
-      .join(" "),
+    ...filenames.map((n) => path.join(PROTOS_DIR, n)).map(toRelative),
   ]);
 };
 
