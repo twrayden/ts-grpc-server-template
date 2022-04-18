@@ -14,7 +14,7 @@ const creds = ServerCredentials.createInsecure();
 export const run = async () => {
   // Setup database, etc. here and pass to service constructors
 
-  server.addService(testServiceDefinition, new TestService());
+  server.addService(testServiceDefinition, TestService());
 
   server.bindAsync(addr, creds, (err, bindPort) => {
     if (err) {
