@@ -1,8 +1,14 @@
+import { Server } from "@grpc/grpc-js";
 import { HelloWorldResponse } from "@typescript-grpc-starter/protos/lib/test";
-import { ITestService } from "@typescript-grpc-starter/protos/lib/test.grpc-server";
+import {
+  ITestService,
+  testServiceDefinition,
+} from "@typescript-grpc-starter/protos/lib/test.grpc-server";
 import { InvalidArgumentError } from "../errors/invalid-argument-error";
 
-export const TestService = (): ITestService => {
+interface TestServiceOpts {}
+
+const TestService = ({}: TestServiceOpts): ITestService => {
   return {
     helloWorld(call, callback) {
       const { name } = call.request;
@@ -21,4 +27,8 @@ export const TestService = (): ITestService => {
       callback(null, res);
     },
   };
+};
+
+export const addTestService = (server: Server, opts: TestServiceOpts) => {
+  server.addService(testServiceDefinition, TestService(opts));
 };
